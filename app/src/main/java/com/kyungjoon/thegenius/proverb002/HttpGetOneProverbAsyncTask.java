@@ -1,4 +1,4 @@
-package com.example.kyungjoon.myapplication;
+package com.kyungjoon.thegenius.proverb002;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,8 +13,7 @@ import com.bumptech.glide.Glide;
 
 import org.json.JSONObject;
 
-import static android.R.attr.path;
-import static com.example.kyungjoon.myapplication.ProverbListAsyncTask.getDataFromHttpResponse;
+import static com.kyungjoon.thegenius.proverb002.ProverbListAsyncTask.getDataFromHttpResponse;
 
 
 public class HttpGetOneProverbAsyncTask extends AsyncTask<String, Void, String> {

@@ -1,4 +1,4 @@
-package com.example.kyungjoon.myapplication;
+package com.kyungjoon.thegenius.proverb002;
 
 import android.app.Activity;
 import android.content.Intent;

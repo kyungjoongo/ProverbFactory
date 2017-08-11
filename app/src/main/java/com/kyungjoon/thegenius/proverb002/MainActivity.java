@@ -1,4 +1,4 @@
-package com.example.kyungjoon.myapplication;
+package com.kyungjoon.thegenius.proverb002;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -35,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements AbsListView.OnScr
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         loadActivity();
 
@@ -43,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements AbsListView.OnScr
 
     private void loadActivity() {
         // Do all of your work here
+
+
         setContentView(R.layout.main_layout);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -50,7 +56,9 @@ public class MainActivity extends AppCompatActivity implements AbsListView.OnScr
 
         mListView = (ListView) findViewById(R.id.listview02);
         // 간단한 리스트를 표시할 Adapter 생성
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        mAdapter = new ArrayAdapter<String>(this, R.layout.simple_list_item);
+
+
         // 읽기 중의 푸터(바닥글)을 생성
         mFooter = getLayoutInflater().inflate(R.layout.progress_item, null);
         // ListView에 푸터를 설정
